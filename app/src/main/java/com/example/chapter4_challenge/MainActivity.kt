@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var player:String
     private lateinit var computer:String
+    private var round:Int=0
+    private var playerWinCount: Int=0
     private var choice= arrayOf("rock","paper","scissor")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,39 +27,47 @@ class MainActivity : AppCompatActivity() {
 
         binding.rockButton.setOnClickListener {
             Log.d("Player","choose rock")
-            binding.rockButton.background=getDrawable(R.drawable.button_background_red)
+            binding.rockButton.background=getDrawable(R.drawable.button_background_blue)
             binding.paperButton.isClickable=false
             binding.scissorButton.isClickable=false
             player="rock"
             computer=choice.random()
             comchoice(computer)
             Log.d("Coumputer","choose $computer")
+            round++
             result(player,computer)
+            binding.score.visibility=View.VISIBLE
         }
         binding.paperButton.setOnClickListener {
             Log.d("Player","choose paper")
-            binding.paperButton.background=getDrawable(R.drawable.button_background_red)
+            binding.paperButton.background=getDrawable(R.drawable.button_background_blue)
             binding.rockButton.isClickable=false
             binding.scissorButton.isClickable=false
             player="paper"
             computer=choice.random()
             comchoice(computer)
             Log.d("Coumputer","choose $computer")
+            round++
             result(player,computer)
+            binding.score.visibility=View.VISIBLE
         }
         binding.scissorButton.setOnClickListener {
             Log.d("Player","choose scissor")
-            binding.scissorButton.background=getDrawable(R.drawable.button_background_red)
+            binding.scissorButton.background=getDrawable(R.drawable.button_background_blue)
             binding.paperButton.isClickable=false
             binding.rockButton.isClickable=false
             player="scissor"
             computer=choice.random()
             comchoice(computer)
             Log.d("Coumputer","choose $computer")
+            round++
             result(player,computer)
+            binding.score.visibility=View.VISIBLE
         }
         binding.resetButton.setOnClickListener {
             Log.d("Player","reset")
+            binding.round.visibility=View.VISIBLE
+            binding.round.text="ROUND : $round"
             reset()
         }
 
@@ -78,6 +88,8 @@ class MainActivity : AppCompatActivity() {
                 binding.result.text="Player WIN"
                 binding.result.setTextColor(Color.WHITE)
                 binding.result.setBackgroundColor(Color.GREEN)
+                playerWinCount++
+                binding.score.text="SCORE: $playerWinCount"
                 Log.d("Result","Win")
             } else {
                 binding.preresult.visibility= View.GONE
