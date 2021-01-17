@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var player:String
     private lateinit var computer:String
-    private var round:Int=0
+    private var round:Int=1
     private var playerWinCount: Int=0
     private var choice= arrayOf("rock","paper","scissor")
 
