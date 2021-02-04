@@ -14,8 +14,10 @@
     <color name="blue_half">#610040FF</color>
     <color name="grey">#1B000000</color>
     <color name="cyan">#00ECBC</color>
+    <color name="cyan_half">#6B00ECBC</color>
     <color name="green">#23EC00</color>
     <color name="orange">#FF8400</color>
+    <color name="trans">#00FF8400</color>
 
 
 </resources>

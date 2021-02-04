@@ -4,5 +4,7 @@
     <string name="id_player">Player 1</string>
     <string name="id_computer">COM</string>
     <string name="result_pre">VS</string>
-    <string name="result_p1" >Win</string>
+    <string name="result_p1">Win</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
