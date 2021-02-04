@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         app:dampingRatio="0.5"
-        app:dotsColor="@color/white"
+        app:dotsColor="@color/blue"
         app:dotsCornerRadius="8dp"
         app:dotsSize="16dp"
         app:dotsSpacing="6dp"

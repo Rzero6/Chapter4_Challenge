@@ -1,10 +1,12 @@
 package com.example.chapter4_challenge
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.chapter4_challenge.databinding.FragmentLanding3Binding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,6 +20,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class LandingFragment3 : Fragment() {
     // TODO: Rename and change types of parameters
+    private var binding : FragmentLanding3Binding? = null
     private var param1: String? = null
     private var param2: String? = null
 
@@ -34,7 +37,19 @@ class LandingFragment3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_landing3, container, false)
+        binding = FragmentLanding3Binding.inflate(inflater, container, false)
+        return binding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding?.nextButton?.setOnClickListener {
+            val playername = binding?.userName?.text.toString().trim()
+            Intent(activity, MenuActivity::class.java).apply {
+                putExtra("playername",playername)
+                startActivity(this)
+            }
+        }
     }
 
     companion object {

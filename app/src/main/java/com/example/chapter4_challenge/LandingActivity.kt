@@ -11,6 +11,7 @@ class LandingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding=ActivityLandingBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        var currentPossition = 0
         val adapter=LandingPageAdapter(this)
         binding?.let {
             it.landingfragmentcontainer.adapter=adapter
@@ -18,6 +19,8 @@ class LandingActivity : AppCompatActivity() {
             it.landingfragmentcontainer.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
+                    currentPossition = position
+                    it.landingfragmentcontainer.setCurrentItem(currentPossition, true)
                 }
             })
         }

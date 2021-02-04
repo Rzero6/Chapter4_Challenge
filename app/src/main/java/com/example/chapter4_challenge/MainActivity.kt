@@ -1,5 +1,6 @@
 package com.example.chapter4_challenge
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val username = intent.getStringExtra("username")
+        binding.idPlayer.text=username
         binding.result.visibility=View.GONE
 
         binding.rockButton.setOnClickListener {
@@ -117,6 +120,7 @@ class MainActivity : AppCompatActivity() {
         binding.result.visibility=View.GONE
         binding.preresult.visibility= View.VISIBLE
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     fun comchoice(computer: String){
         if (computer=="rock") {
             binding.rockView.background=getDrawable(R.drawable.button_background_red)
