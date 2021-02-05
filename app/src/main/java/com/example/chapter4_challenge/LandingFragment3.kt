@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.chapter4_challenge.databinding.FragmentLanding3Binding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,7 +21,7 @@ private const val ARG_PARAM2 = "param2"
  */
 class LandingFragment3 : Fragment() {
     // TODO: Rename and change types of parameters
-    private var binding : FragmentLanding3Binding? = null
+    private var binding: FragmentLanding3Binding? = null
     private var param1: String? = null
     private var param2: String? = null
 
@@ -45,9 +46,13 @@ class LandingFragment3 : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding?.nextButton?.setOnClickListener {
             val playername = binding?.userName?.text.toString().trim()
-            Intent(activity, MenuActivity::class.java).apply {
-                putExtra("playername",playername)
-                startActivity(this)
+            if (playername.isEmpty()) {
+                Toast.makeText(activity, "Enter Your Name!", Toast.LENGTH_SHORT).show()
+            } else {
+                Intent(activity, MenuActivity::class.java).apply {
+                    putExtra("playername", playername)
+                    startActivity(this)
+                }
             }
         }
     }

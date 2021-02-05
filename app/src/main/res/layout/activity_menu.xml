@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity"
-    android:background="@color/cyan_half">
+    tools:context=".MenuActivity">
 
     <Button
         android:id="@+id/playbutton"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Play"
         android:background="@drawable/gradient_background"
+        android:text="Play"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.764" />
+        app:layout_constraintVertical_bias="0.872" />
 
     <TextView
         android:id="@+id/textView5"
@@ -42,6 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="vertical"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -57,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/coming_soon"
+            android:textSize="16dp"
             android:text="PVP"
             android:textColor="@color/black"
             android:textStyle="bold" />
@@ -70,6 +71,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="25dp"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pvp">
@@ -84,12 +86,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:fontFamily="@font/coming_soon"
+            android:textSize="16dp"
             android:text="PVE"
             android:textColor="@color/black"
             android:textStyle="bold" />
     </LinearLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/player2input"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="203dp"
+        tools:layout_editor_absoluteY="421dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pve"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/player2_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Player 2" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

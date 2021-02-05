@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LandingFragment1"
-    android:background="@color/cyan_half">
+    android:background="@color/pink">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/coming_soon"
         android:text="Playing against another player"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
