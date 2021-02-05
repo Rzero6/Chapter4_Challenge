@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_corners_background">
     <LinearLayout
         android:padding="10dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
@@ -19,28 +20,43 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_gravity="center"/>
+
         <TextView
             android:id="@+id/match_result"
-            android:padding="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
             android:text="Match Result!"
+            android:textAlignment="center"
             android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/score_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:layout_gravity="center"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:textColor="@color/pink"/>
         <Button
             android:id="@+id/playagain_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:text="Play Again"
-            android:backgroundTint="@color/red"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_corners_background"
+            android:backgroundTint="@color/green"
             android:textColor="@color/white"
             android:layout_gravity="center"/>
         <Button
             android:id="@+id/menu_button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/orange"
+            android:background="@drawable/rounded_corners_background"
             android:text="Back to Menu"
             android:layout_gravity="center"
             android:textColor="@color/white"/>

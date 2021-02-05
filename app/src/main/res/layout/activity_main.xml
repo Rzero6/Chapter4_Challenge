@@ -181,26 +181,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="190dp"
-        android:fontFamily="@font/bangers"
-        android:gravity="center_vertical"
-        android:background="@drawable/button_background_red"
-        android:rotation="-20"
-        android:text="Result"
-        android:textAlignment="center"
-        android:textColor="@color/red"
-        android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="RtlCompat" />
-
     <ImageButton
         android:id="@+id/resetButton"
         android:layout_width="50dp"
@@ -229,19 +209,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="290dp"
-        android:textStyle="bold"
-        android:text="SCORE: 0"
-        android:textColor="@color/orange"
-        android:textSize="20sp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
