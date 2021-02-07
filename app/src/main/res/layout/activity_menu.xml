@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <TextView
         android:id="@+id/textView5"
@@ -43,7 +43,7 @@
         android:id="@+id/pvp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,19 +51,19 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/pvp" />
 
         <TextView
             android:id="@+id/pvptext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16dp"
             android:text="PVP"
             android:textColor="@color/black"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -72,26 +72,27 @@
         android:id="@+id/pve"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:orientation="vertical"
-        android:layout_marginTop="25dp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/pvp">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_gravity="center"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@drawable/pve" />
 
         <TextView
             android:id="@+id/pvetext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16dp"
             android:text="PVE"
             android:textColor="@color/black"
+            android:textSize="16dp"
             android:textStyle="bold" />
     </LinearLayout>
 

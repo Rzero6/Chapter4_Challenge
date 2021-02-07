@@ -7,8 +7,10 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.chapter4_challenge.databinding.ActivityMainBinding
@@ -19,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var bindingresult: ResultLayoutBinding
     private lateinit var player: String
     private lateinit var computer: String
     private var round: Int = 1
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 player = "rock"
                 computer = choice.random()
                 comchoice(computer)
-                Log.d("Coumputer", "choose $computer")
+                Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                 round++
                 result(player, computer, username, player2name)
             }
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 player = "paper"
                 computer = choice.random()
                 comchoice(computer)
-                Log.d("Coumputer", "choose $computer")
+                Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                 round++
                 result(player, computer, username, player2name)
             }
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 player = "scissor"
                 computer = choice.random()
                 comchoice(computer)
-                Log.d("Coumputer", "choose $computer")
+                Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                 round++
                 result(player, computer, username, player2name)
             }
@@ -96,7 +97,7 @@ class MainActivity : AppCompatActivity() {
                     binding.scissorView.isClickable = false
                     player = "rock"
                     computer = "rock"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -107,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                     binding.scissorView.isClickable = false
                     player = "rock"
                     computer = "paper"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -118,7 +119,7 @@ class MainActivity : AppCompatActivity() {
                     binding.rockView.isClickable = false
                     player = "rock"
                     computer = "scissor"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -135,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                     binding.scissorView.isClickable = false
                     player = "paper"
                     computer = "rock"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -147,7 +148,7 @@ class MainActivity : AppCompatActivity() {
                     binding.rockView.isClickable = false
                     player = "paper"
                     computer = "paper"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -158,7 +159,7 @@ class MainActivity : AppCompatActivity() {
                     binding.rockView.isClickable = false
                     player = "paper"
                     computer = "scissor"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -176,7 +177,7 @@ class MainActivity : AppCompatActivity() {
                     binding.scissorView.isClickable = false
                     player = "scissor"
                     computer = "rock"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -188,7 +189,7 @@ class MainActivity : AppCompatActivity() {
                     binding.rockView.isClickable = false
                     player = "scissor"
                     computer = "paper"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -200,7 +201,7 @@ class MainActivity : AppCompatActivity() {
                     binding.rockView.isClickable = false
                     player = "scissor"
                     computer = "scissor"
-                    Log.d("Coumputer", "choose $computer")
+                    Toast.makeText(this,"$username picked $player\n$player2name picked $computer",Toast.LENGTH_LONG).show()
                     round++
                     result(player, computer, username, player2name)
                 }
@@ -213,48 +214,35 @@ class MainActivity : AppCompatActivity() {
             binding.round.text = "ROUND : $round"
             reset(username)
         }
+        binding.closeButton.setOnClickListener {
+            val intent=Intent(this,MenuActivity::class.java)
+            intent.putExtra("playername",username)
+            startActivity(intent)
+        }
 
     }
 
     fun result(player: String, computer: String, username: String, player2name: String) {
-        bindingresult= ResultLayoutBinding.inflate(layoutInflater)
-        val resultDialog = AlertDialog.Builder(this)
-        resultDialog.setView(bindingresult.root)
-        val intent=Intent(this,MenuActivity::class.java)
-        val dialog=resultDialog.create()
         if (player == computer) {
-            bindingresult.matchResult.text="DRAW!"
-            bindingresult.scoreScreen.text="$playerWinCount - $player2WinCount"
-            bindingresult.matchResult.setTextColor(Color.BLACK)
-            resultDialog.show()
+            val result="Draw!"
+            val score="$playerWinCount - $player2WinCount"
+            resultDialog(result,score,username)
             Log.d("Result", "Draw")
         } else {
             if ((player == "rock" && computer == "scissor") || (player == "paper" && computer == "rock") || (player == "scissor" && computer == "paper")) {
                 playerWinCount++
-                bindingresult.matchResult.text="$username \nWON!"
-                bindingresult.scoreScreen.text="$playerWinCount - $player2WinCount"
-                bindingresult.matchResult.setTextColor(Color.BLUE)
-                resultDialog.show()
+                val result="$username \nWON!"
+                val score="$playerWinCount - $player2WinCount"
+                resultDialog(result,score,username)
                 Log.d("Result", "Win")
             } else {
                 player2WinCount++
-                bindingresult.matchResult.text="$player2name \nWON!"
-                bindingresult.scoreScreen.text="$playerWinCount - $player2WinCount"
-                bindingresult.matchResult.setTextColor(Color.RED)
-                resultDialog.show()
+                val result="$player2name \nWON!"
+                val score="$playerWinCount - $player2WinCount"
+                resultDialog(result,score,username)
                 Log.d("Result", "Lose")
             }
 
-        }
-        bindingresult.playagainButton.setOnClickListener {
-            dialog.dismiss()
-            reset(username)
-        }
-        bindingresult.menuButton.setOnClickListener {
-            dialog.dismiss()
-            reset(username)
-            intent.putExtra("playername",username)
-            startActivity(intent)
         }
     }
 
@@ -286,5 +274,26 @@ class MainActivity : AppCompatActivity() {
             binding.scissorView.background = getDrawable(R.drawable.button_background_red)
         }
     }
+
+    fun resultDialog(result: String,score: String,username: String) {
+        val builder = AlertDialog.Builder(this)
+        val view = ResultLayoutBinding.inflate(layoutInflater)
+        builder.setView(view.root)
+        val dialog=builder.create()
+        view.matchResult.text=result
+        view.scoreScreen.text=score
+        view.playagainButton.setOnClickListener {
+            reset(username)
+            dialog.dismiss()
+        }
+        view.menuButton.setOnClickListener {
+            val intent=Intent(this,MenuActivity::class.java)
+            intent.putExtra("playername",username)
+            startActivity(intent)
+        }
+        dialog.setCancelable(false)
+        dialog.show()
+    }
+
 
 }

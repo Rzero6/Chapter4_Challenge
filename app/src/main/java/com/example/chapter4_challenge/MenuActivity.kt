@@ -25,8 +25,8 @@ class MenuActivity : AppCompatActivity() {
         val username = playername
         binding.pvptext.text = "$username vs Player"
         binding.pvetext.text = "$username vs CPU"
-        Snackbar.make(binding.root, "Welcome $playername", Snackbar.LENGTH_LONG)
-            .setAction("Close") {
+        Snackbar.make(binding.root, "Welcome $playername", Snackbar.LENGTH_LONG).setActionTextColor(Color.MAGENTA)
+            .setAction("Dismiss") {
 
             }.show()
 
