@@ -16,6 +16,7 @@ class SplashScreenActivity : AppCompatActivity() {
         binding= ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         Picasso.get().load("https://i.ibb.co/HC5ZPgD/splash-screen1.png").into(binding.textImageView)
+        binding.drawImageView
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this,LandingActivity::class.java))
             finish()

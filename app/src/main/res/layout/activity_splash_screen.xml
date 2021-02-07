@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/text_imageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -28,11 +28,11 @@
         android:id="@+id/draw_imageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="150dp"
+        android:src="@drawable/splashscreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_imageView"
-        tools:srcCompat="@drawable/splashscreen" />
+        app:layout_constraintTop_toBottomOf="@+id/text_imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
